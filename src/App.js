@@ -4,15 +4,15 @@ import TodoForm from './components/TodoForm'
 
 const todos = [
   {
-    task: 'Organize Garage',
-    id: 1528817077286,
+    task: '',
+    id: null,
     completed: false
   },
-  {
-    task: 'Bake Cookies',
-    id: 1528817084358,
-    completed: false
-  }
+  // {
+  //   task: 'Bake Cookies',
+  //   id: 1528817084358,
+  //   completed: false
+  // }
 ];
 
 class App extends React.Component {
@@ -60,7 +60,7 @@ toggleItem = itemId => {
         </div>
         <div>
           <TodoList 
-          todos={this.state.todos}/>
+          todos={this.state.todos} toggleItem={this.toggleItem}/>
         </div>
         
       </div>

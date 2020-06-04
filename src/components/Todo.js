@@ -1,5 +1,5 @@
 import React from 'react';
-import '../components/Todo.css'
+import './Todo.css'
 
 const Todo = props => {
   console.log(props)
