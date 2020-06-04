@@ -22,7 +22,9 @@ class App extends React.Component {
     this.state = {
       todos
     }
+    
   }
+  
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
 addItem = (e, item) => {
@@ -38,7 +40,7 @@ addItem = (e, item) => {
 }
 
 toggleItem = itemId => {
-  console.log(itemId);
+ 
   this.setState({
     todos: this.state.todos.map(item => {
       if(itemId === item.id) {
@@ -51,6 +53,16 @@ toggleItem = itemId => {
   })
 }
 
+clearCompleted = e => {
+  e.preventDefault();
+  console.log(e)
+  this.setState({
+    todos: this.state.todos.filter(item => !item.completed)
+  });
+}
+
+
+
   render() {
     return (
       <div>
@@ -60,7 +72,7 @@ toggleItem = itemId => {
         </div>
         <div>
           <TodoList 
-          todos={this.state.todos} toggleItem={this.toggleItem}/>
+          todos={this.state.todos} toggleItem={this.toggleItem} clearCompleted={this.clearCompleted}/>
         </div>
         
       </div>
