@@ -37,6 +37,20 @@ addItem = (e, item) => {
   })
 }
 
+toggleItem = itemId => {
+  console.log(itemId);
+  this.setState({
+    todos: this.state.todos.map(item => {
+      if(itemId === item.id) {
+        return {
+          ...item, completed: !item.completed
+        };
+      }
+      return item;
+    })
+  })
+}
+
   render() {
     return (
       <div>
