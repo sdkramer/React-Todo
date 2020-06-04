@@ -42,7 +42,7 @@ addItem = (e, item) => {
       <div>
         <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm />
+        <TodoForm addItem={this.addItem}/>
         </div>
         <div>
           <TodoList 
