@@ -55,6 +55,7 @@ toggleItem = itemId => {
 
 clearCompleted = e => {
   e.preventDefault();
+  e.persist();
   console.log(e)
   this.setState({
     todos: this.state.todos.filter(item => !item.completed)
