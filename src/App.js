@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoList from './components/TodoList'
 
 const todos = [
   {
@@ -38,7 +39,14 @@ addItem = (e, item) => {
   render() {
     return (
       <div>
+        <div>
         <h2>Welcome to your Todo App!</h2>
+        </div>
+        <div>
+          <TodoList 
+          todos={this.state.todos}/>
+        </div>
+        
       </div>
     );
   }
